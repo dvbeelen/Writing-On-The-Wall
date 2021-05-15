@@ -2,4 +2,6 @@ extends Spatial
 
 
 func _ready():
-	get_node("EnvironmentalSubtitle/Viewport/Control/SubDisplayLabel").showLine(SubManager.get_current_line())
+	pass
+#	get_node("DisplayManager").init()
+#	get_node("EnvironmentalSubtitle/Viewport/Control/SubDisplayLabel").show_line(SubManager.get_current_line())

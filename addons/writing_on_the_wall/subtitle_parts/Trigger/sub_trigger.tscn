@@ -2,7 +2,6 @@
 
 [ext_resource path="res://addons/writing_on_the_wall/subtitle_parts/Trigger/sub_trigger.gd" type="Script" id=1]
 
-
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1.10768, 0.119329, 1 )
 
@@ -21,7 +20,6 @@ shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, 0, 0 )
-visible = false
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 [connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]

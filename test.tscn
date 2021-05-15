@@ -1,16 +1,69 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://addons/writing_on_the_wall/sub_generator.gd" type="Script" id=1]
-[ext_resource path="res://addons/writing_on_the_wall/subtitle_parts/Display/sub_display.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/writing_on_the_wall/subtitle_parts/Trigger/sub_trigger.tscn" type="PackedScene" id=2]
 [ext_resource path="res://test.gd" type="Script" id=3]
+[ext_resource path="res://addons/writing_on_the_wall/managers/display_manager.gd" type="Script" id=4]
+[ext_resource path="res://addons/writing_on_the_wall/subtitle_parts/Display/sub_display.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/writing_on_the_wall/sub_generator.gd" type="Script" id=6]
 
-[node name="Spatial" type="Spatial"]
+[sub_resource type="BoxShape" id=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[node name="Demo" type="Spatial"]
 script = ExtResource( 3 )
 
-[node name="Camera" type="Camera" parent="."]
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.8, 0, -3.25841e-07, 0, 0.8, 0, 2.60673e-07, 0, -1, 0, 1.09701, 0 )
+
+[node name="room" type="Spatial" parent="."]
+
+[node name="slab" type="RigidBody" parent="room"]
+mode = 1
+
+[node name="CollisionShape" type="CollisionShape" parent="room/slab"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="room/slab"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="slab2" type="RigidBody" parent="room"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 10.4939 )
+mode = 1
+
+[node name="CollisionShape" type="CollisionShape" parent="room/slab2"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="room/slab2"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Triggers" type="Spatial" parent="."]
+
+[node name="SubtitleTrigger" parent="Triggers" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.79425, 0.973531, 3.03481 )
+
+[node name="SubtitleTrigger2" parent="Triggers" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0703175, 1.11277, 2.95656 )
+
+[node name="SubtitleTrigger3" parent="Triggers" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.24043, 1.11277, 2.95656 )
+
+[node name="DisplayManager" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0703175, 1.11277, 2.95656 )
+script = ExtResource( 4 )
+
+[node name="SubtitleDisplay" parent="DisplayManager" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.44908, 6.4698 )
+
+[node name="SubtitleDisplay2" parent="DisplayManager" instance=ExtResource( 5 )]
+transform = Transform( -0.999389, 0, 0.0349517, 0, 1, 0, -0.0349517, 0, -0.999389, -2.64638, 2.52634, 6.44601 )
 
 [node name="SubGenerator" type="Spatial" parent="."]
-script = ExtResource( 1 )
-
-[node name="EnvironmentalSubtitle" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.66232 )
+script = ExtResource( 6 )

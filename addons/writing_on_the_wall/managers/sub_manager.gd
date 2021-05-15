@@ -19,3 +19,6 @@ func set_line_count(line_count):
 
 func get_current_line():
 	return subtitle_data.text[String(current_line)]
+
+func next_line():
+	get_tree().get_current_scene().get_node("DisplayManager").next_child(current_line)
