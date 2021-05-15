@@ -1,7 +1,7 @@
 tool
 extends Spatial
 
-var ES = preload("res://addons/writing_on_the_wall/EnvironmentalSubtitle.tscn")
+var ES = preload("res://addons/writing_on_the_wall/ES_parts/sub_display.tscn")
 var subtitleParent = Spatial.new()
 
 func _ready():
@@ -31,22 +31,33 @@ func get_json(path):
 					printerr('Error: found JSON file does not contain valid JSON')
 				var data = json_parse.result
 				if data:
-					generate_env_subtitles(data)
+					save_subtitles(data)
 			file = directory.get_next()
 
-func generate_env_subtitles(data):
-	var keys = data.text.keys()
-	var lines = data.text.values()
-	for i in data.text.size():
-		var subtitle = ES.instance()
-		subtitle.get_node("Viewport/Control/Label").text = lines[i]
-		subtitle.name = keys[i]
-		subtitleParent.add_child(subtitle)
-		subtitle.set_owner(subtitleParent)
-	save_generated_subtitles(data.title)
+func save_subtitles(data):
+	SubManager.set_title(data.title)
+	SubManager.set_line_count(data.text.size())
+	for line in data.text:
+		SubManager.set_text(line, data.text[line])
+	print(SubManager.subtitle_data)
 
-func save_generated_subtitles(title):
-	var scn = PackedScene.new()
-	subtitleParent.name = title
-	scn.pack(subtitleParent)
-	ResourceSaver.save(title + ".tscn", scn)
+#func generate_env_subtitles(data):
+#	var keys = data.text.keys()
+#	var lines = data.text.values()
+#	for i in data.text.size():
+#		var subtitle = ES.instance()
+#		print(lines[i])
+#		subtitle.get_node("Viewport/Control/Label").text = lines[i]
+#		subtitle.name = keys[i]
+#		subtitleParent.add_child(subtitle)
+#		subtitle.set_owner(subtitleParent)
+#		subtitle.get_node("Viewport").set_owner(subtitleParent)
+#		subtitle.get_node("Viewport/Control").set_owner(subtitleParent)
+#		subtitle.get_node("Viewport/Control/Label").set_owner(subtitleParent)
+#	save_generated_subtitles(data.title)
+#
+#func save_generated_subtitles(title):
+#	var scn = PackedScene.new()
+#	subtitleParent.name = title
+#	scn.pack(subtitleParent)
+#	ResourceSaver.save(title + ".tscn", scn)

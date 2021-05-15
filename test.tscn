@@ -4,8 +4,7 @@
 
 [node name="Spatial" type="Spatial"]
 
-[node name="SubtitleGenerator" type="Spatial" parent="."]
-script = ExtResource( 1 )
-
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.37239 )
+
+[node name="SubGenerator" type="Spatial" parent="."]
+script = ExtResource( 1 )
