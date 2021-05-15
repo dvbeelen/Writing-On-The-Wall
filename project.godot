@@ -16,11 +16,11 @@ _global_script_class_icons={
 [application]
 
 config/name="WritingOnTheWall"
-config/icon="res://addons/writing_on_the_wall/icon.png"
+config/icon="res://addons/writing_on_the_wall/src/icon.png"
 
 [autoload]
 
-SubManager="*res://addons/writing_on_the_wall/sub_manager.gd"
+SubManager="*res://addons/writing_on_the_wall/managers/sub_manager.gd"
 
 [editor_plugins]
 

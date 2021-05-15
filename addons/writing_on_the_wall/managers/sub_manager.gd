@@ -16,3 +16,6 @@ func set_text(index, line):
 
 func set_line_count(line_count):
 	subtitle_data.line_count = line_count
+
+func get_current_line():
+	return subtitle_data.text[String(current_line)]

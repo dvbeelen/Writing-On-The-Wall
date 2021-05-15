@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://addons/writing_on_the_wall/ES_parts/Display/sub_display.gd" type="Script" id=1]
+[ext_resource path="res://addons/writing_on_the_wall/subtitle_parts/DisplayLabel/display_label.gd" type="Script" id=1]
 
 [sub_resource type="QuadMesh" id=1]
 
@@ -17,37 +17,12 @@ albedo_texture = SubResource( 2 )
 [sub_resource type="Animation" id=4]
 resource_name = "fadeIn"
 length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Viewport/Control/Label:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.1, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
 
 [sub_resource type="Animation" id=5]
 resource_name = "fadeOut"
 length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Viewport/Control/Label:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
 
 [node name="SubtitleDisplay" type="Spatial"]
-script = ExtResource( 1 )
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 250, 250 )
@@ -59,14 +34,13 @@ render_target_update_mode = 3
 margin_right = 640.0
 margin_bottom = 640.0
 
-[node name="Label" type="RichTextLabel" parent="Viewport/Control"]
+[node name="SubDisplayLabel" type="RichTextLabel" parent="Viewport/Control"]
 margin_right = 200.0
-margin_bottom = 522.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 0
-custom_constants/shadow_offset_y = 0
-
-[node name="Timer" type="Timer" parent="Viewport/Control"]
+margin_bottom = 200.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 1, 0, 0, 0 )

@@ -40,24 +40,3 @@ func save_subtitles(data):
 	for line in data.text:
 		SubManager.set_text(line, data.text[line])
 	print(SubManager.subtitle_data)
-
-#func generate_env_subtitles(data):
-#	var keys = data.text.keys()
-#	var lines = data.text.values()
-#	for i in data.text.size():
-#		var subtitle = ES.instance()
-#		print(lines[i])
-#		subtitle.get_node("Viewport/Control/Label").text = lines[i]
-#		subtitle.name = keys[i]
-#		subtitleParent.add_child(subtitle)
-#		subtitle.set_owner(subtitleParent)
-#		subtitle.get_node("Viewport").set_owner(subtitleParent)
-#		subtitle.get_node("Viewport/Control").set_owner(subtitleParent)
-#		subtitle.get_node("Viewport/Control/Label").set_owner(subtitleParent)
-#	save_generated_subtitles(data.title)
-#
-#func save_generated_subtitles(title):
-#	var scn = PackedScene.new()
-#	subtitleParent.name = title
-#	scn.pack(subtitleParent)
-#	ResourceSaver.save(title + ".tscn", scn)

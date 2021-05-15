@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon_small.png-22e702cb6acbb4b14cd8c8cfafffbc03.stex"
+path="res://.import/icon_small.png-ede97325156396b9084fd19b5d7f2a3a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/writing_on_the_wall/icon_small.png"
-dest_files=[ "res://.import/icon_small.png-22e702cb6acbb4b14cd8c8cfafffbc03.stex" ]
+source_file="res://addons/writing_on_the_wall/src/icon_small.png"
+dest_files=[ "res://.import/icon_small.png-ede97325156396b9084fd19b5d7f2a3a.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

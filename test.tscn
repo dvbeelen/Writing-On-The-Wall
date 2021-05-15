@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://addons/writing_on_the_wall/sub_generator.gd" type="Script" id=1]
-[ext_resource path="res://addons/writing_on_the_wall/ES_parts/Display/sub_display.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/writing_on_the_wall/subtitle_parts/Display/sub_display.tscn" type="PackedScene" id=2]
+[ext_resource path="res://test.gd" type="Script" id=3]
 
 [node name="Spatial" type="Spatial"]
+script = ExtResource( 3 )
 
 [node name="Camera" type="Camera" parent="."]
 
