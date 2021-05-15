@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://addons/writing_on_the_wall/ES_parts/Display/sub_display.gd" type="Script" id=1]
 
 [sub_resource type="QuadMesh" id=1]
 
@@ -44,7 +46,8 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="EnvironmentalSubtitle" type="Spatial"]
+[node name="SubtitleDisplay" type="Spatial"]
+script = ExtResource( 1 )
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 250, 250 )
@@ -56,15 +59,14 @@ render_target_update_mode = 3
 margin_right = 640.0
 margin_bottom = 640.0
 
-[node name="Label" type="Label" parent="Viewport/Control"]
+[node name="Label" type="RichTextLabel" parent="Viewport/Control"]
 margin_right = 200.0
 margin_bottom = 522.0
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 0
-text = "Your text will be displayed like this!"
-autowrap = true
+
+[node name="Timer" type="Timer" parent="Viewport/Control"]
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 1, 0, 0, 0 )

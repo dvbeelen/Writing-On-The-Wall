@@ -1,7 +1,7 @@
 tool
 extends Spatial
 
-var ES = preload("res://addons/writing_on_the_wall/ES_parts/sub_display.tscn")
+#var ES = preload("res://addons/writing_on_the_wall/ES_parts/sub_display.tscn")
 var subtitleParent = Spatial.new()
 
 func _ready():
