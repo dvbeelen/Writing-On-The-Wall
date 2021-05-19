@@ -7,7 +7,6 @@ var subtitle_data = {
 }
 
 var current_line = -1
-
 var writing_speed = 0.05
 
 func set_title(title):
@@ -20,10 +19,11 @@ func set_line_count(line_count):
 	subtitle_data.line_count = line_count
 
 func get_current_line():
-	if subtitle_data.text[String(current_line)]:
+	if String(current_line) in subtitle_data.text:
 		return subtitle_data.text[String(current_line)]
 	else:
-		print('Error: Too few displays for your amount of lines.')
+		print('Error: No displays to put remaining text on.')
 
 func next_line():
-	get_tree().get_current_scene().get_node("DisplayManager").next_child()
+	if String(current_line) in subtitle_data.text:
+		get_tree().get_current_scene().get_node("DisplayManager").next_child()
