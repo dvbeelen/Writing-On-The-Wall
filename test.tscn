@@ -68,4 +68,4 @@ transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -7.0818
 
 [node name="SubGenerator" type="Spatial" parent="."]
 script = ExtResource( 6 )
-story_to_show = "Moby Dick"
+story_to_show = "The Music of Eric Zahn"

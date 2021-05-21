@@ -59,3 +59,7 @@ func save_subtitles(data):
 	SubManager.set_line_count(data.text.size())
 	for line in data.text:
 		SubManager.set_text(line, data.text[line])
+
+func change_story_to_show(new_story, reset):
+	story_to_show = new_story
+	get_story_to_show()

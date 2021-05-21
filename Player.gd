@@ -57,7 +57,8 @@ func _physics_process(delta):
 		input.x -= 1
 	if Input.is_action_pressed("ui_right"):
 		input.x += 1
-	
+	if Input.is_action_just_pressed("ui_select"):
+		get_parent().get_node("SubGenerator").change_story_to_show('Moby Dick', true)
 	input = input.normalized()
 	
 #	Get the forward and right directions
