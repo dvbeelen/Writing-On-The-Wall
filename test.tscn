@@ -42,30 +42,30 @@ transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0.0319052, -0.000136375, 2.2
 mesh = SubResource( 2 )
 material/0 = null
 
-[node name="Triggers" type="Spatial" parent="."]
-
-[node name="SubtitleTrigger" parent="Triggers" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.79425, 0.973531, 3.03481 )
-
-[node name="SubtitleTrigger2" parent="Triggers" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0703175, 1.11277, 2.95656 )
-
-[node name="SubtitleTrigger3" parent="Triggers" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.24043, 1.11277, 2.95656 )
-
-[node name="DisplayManager" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0703175, 1.11277, 2.95656 )
-script = ExtResource( 4 )
-
-[node name="SubtitleDisplay" parent="DisplayManager" instance=ExtResource( 5 )]
-transform = Transform( -0.999999, 0, 0.00137869, 0, 1, 0, -0.00137869, 0, -0.999999, 7.20253, 2.5, 6.47 )
-
-[node name="SubtitleDisplay2" parent="DisplayManager" instance=ExtResource( 5 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 2.98347, 2.52634, 6.44601 )
-
-[node name="SubtitleDisplay3" parent="DisplayManager" instance=ExtResource( 5 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 5.10277, 5.64607, 6.47 )
-
 [node name="SubGenerator" type="Spatial" parent="."]
 script = ExtResource( 6 )
 story_to_show = "The Music of Eric Zahn"
+
+[node name="DisplayManager" type="Spatial" parent="SubGenerator"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0703175, 1.11277, 2.95656 )
+script = ExtResource( 4 )
+
+[node name="SubtitleDisplay" parent="SubGenerator/DisplayManager" instance=ExtResource( 5 )]
+transform = Transform( -0.999999, 0, 0.00137869, 0, 1, 0, -0.00137869, 0, -0.999999, 7.20253, 2.5, 6.47 )
+
+[node name="SubtitleDisplay2" parent="SubGenerator/DisplayManager" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0.327198, 2.52634, 6.44601 )
+
+[node name="SubtitleDisplay3" parent="SubGenerator/DisplayManager" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -6.91912, 2.5, 6.47 )
+
+[node name="Triggers" type="Spatial" parent="SubGenerator"]
+
+[node name="SubtitleTrigger" parent="SubGenerator/Triggers" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.79425, 0.973531, 3.03481 )
+
+[node name="SubtitleTrigger2" parent="SubGenerator/Triggers" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0703175, 1.11277, 2.95656 )
+
+[node name="SubtitleTrigger3" parent="SubGenerator/Triggers" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.24043, 1.11277, 2.95656 )

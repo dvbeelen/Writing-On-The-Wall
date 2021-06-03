@@ -6,6 +6,9 @@ var subtitle_data = {
 	"line_count": 0
 }
 
+var text_effect
+var text_color
+
 var current_line = -1
 var writing_speed = 0.05
 
@@ -22,8 +25,8 @@ func get_current_line():
 	if String(current_line) in subtitle_data.text:
 		return subtitle_data.text[String(current_line)]
 	else:
-		print('Error: No displays to put remaining text on.')
+		print('Error: No more text to display.')
 
 func next_line():
 	if String(current_line) in subtitle_data.text:
-		get_tree().get_current_scene().get_node("DisplayManager").next_child()
+		get_tree().get_current_scene().get_node("SubGenerator/DisplayManager").next_child()
