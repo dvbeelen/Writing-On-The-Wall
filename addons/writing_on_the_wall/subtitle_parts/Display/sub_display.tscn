@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://addons/writing_on_the_wall/subtitle_parts/DisplayLabel/display_label.gd" type="Script" id=1]
 [ext_resource path="res://addons/writing_on_the_wall/subtitle_parts/Display/sub_display.gd" type="Script" id=2]
-[ext_resource path="res://font.tres" type="DynamicFont" id=3]
 
 [sub_resource type="QuadMesh" id=1]
 
@@ -40,7 +39,6 @@ margin_bottom = 640.0
 [node name="SubDisplayLabel" type="RichTextLabel" parent="Viewport/Control"]
 margin_right = 200.0
 margin_bottom = 200.0
-custom_fonts/normal_font = ExtResource( 3 )
 bbcode_enabled = true
 script = ExtResource( 1 )
 __meta__ = {
