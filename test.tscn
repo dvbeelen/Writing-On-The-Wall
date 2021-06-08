@@ -49,7 +49,6 @@ story_to_show = "The Music of Eric Zahn"
 [node name="DisplayManager" type="Spatial" parent="SubGenerator"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0703175, 1.11277, 2.95656 )
 script = ExtResource( 4 )
-path_to_font = "res://font.tres"
 
 [node name="SubtitleDisplay" parent="SubGenerator/DisplayManager" instance=ExtResource( 5 )]
 transform = Transform( -0.999999, 0, 0.00137869, 0, 1, 0, -0.00137869, 0, -0.999999, 7.20253, 2.5, 6.47 )
