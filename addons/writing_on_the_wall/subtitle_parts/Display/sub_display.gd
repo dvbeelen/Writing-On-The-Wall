@@ -10,7 +10,6 @@ export(effects) var effect
 
 export var color= ''
 
-
 var active = false
 
 func _process(delta):
