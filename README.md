@@ -11,10 +11,14 @@ This is a plug-in for the Godot engine that takes JSON encoded texts and uses it
 
 For an example of what the plug-in can do, see this example below:
 
-<img align="center" src="addons/writing_on_the_wall/src/ZNdwMpJltf.gif" height="450"/>
+<img align="center" src="addons/writing_on_the_wall/src/ZNdwMpJltf.gif"/>
 
 <b> How to install </b>
 
 For more information on how to install a plug-in in Godot you can read this official documentation. It explains the process better than I ever could. 
 
 https://docs.godotengine.org/en/stable/tutorials/plugins/editor/installing_plugins.html
+
+
+<b> More information </b>
+For more information and documentation see the Wiki. 
