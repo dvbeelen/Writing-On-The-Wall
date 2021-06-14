@@ -11,7 +11,7 @@ This is a plug-in for the Godot engine that takes JSON encoded texts and uses it
 
 For an example of what the plug-in can do, see this example below:
 
-<img src="addons/writing_on_the_wall/src/ZNdwMpJltf.gif" width="40" height="40" />
+<img align="center" src="addons/writing_on_the_wall/src/ZNdwMpJltf.gif" width="250" height="250" />
 
 <b> How to install </b>
 
