@@ -21,4 +21,5 @@ https://docs.godotengine.org/en/stable/tutorials/plugins/editor/installing_plugi
 
 
 <b> More information </b>
-For more information and documentation see the Wiki. 
+
+For more information and documentation for this plug-in, see the Wiki. 
